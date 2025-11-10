@@ -15,7 +15,7 @@ afterAll(async () => {
 
 describe('Login flow', () => {
   test('User can log in with valid credentials', async () => {
-    await loginScreen.login('test_user', 'password123');
+    await loginScreen.login('vlad@masterpilot.aero', 'Happy123!#');
 
     const successElement = await driver.$('~homeScreen');
     const isDisplayed = await successElement.isDisplayed();
