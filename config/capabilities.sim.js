@@ -1,7 +1,7 @@
-export const iosCaps = {
+export const iosSimCaps = {
   platformName: 'iOS',
-  deviceName: 'iPhone 14',
-  platformVersion: '17.0',
+  deviceName: 'accountant',
+  platformVersion: '26.0.1',
   automationName: 'XCUITest',
   app: '/Users/yourname/path/to/app.app',
   noReset: true,
