@@ -1,8 +1,9 @@
 export const iosSimCaps = {
   platformName: 'iOS',
-  deviceName: 'accountant',
-  platformVersion: '26.0.1',
+  deviceName: 'iPhone 16e',
+  platformVersion: '26.1',
   automationName: 'XCUITest',
-  app: '/Users/yourname/path/to/app.app',
+  //app: '/Users/accountant/Downloads/MasterPilot 2.app',
+  app: '/Users/accountant/Downloads/Telegram Desktop/MasterPilot.app',
   noReset: true,
 };
