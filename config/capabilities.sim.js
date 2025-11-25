@@ -1,5 +1,5 @@
 export const iosSimCaps = {
-  platformName: 'iOS', // стандартный W3C capability, без префикса
+  platformName: 'iOS',
   'appium:deviceName': 'iPhone 16e',
   'appium:platformVersion': '26.1',
   'appium:automationName': 'XCUITest',
