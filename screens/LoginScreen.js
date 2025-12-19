@@ -12,21 +12,21 @@ export default class LoginScreen extends BaseScreen {
     return this.driver.$('//XCUIElementTypeButton[@name="Sign In"]');
   }
 
-  // Поле Email в форме логина
-  get emailField() {
-    return this.driver.$(
-      '//XCUIElementTypeTextField[@placeholderValue="Email"]'
-    );
-  }
+    // Поле Email в форме логина
+    get emailField() {
+        return this.driver.$(
+            '//XCUIElementTypeTextField[@value="Email"]'
+        );
+    }
+    // Поле Password в форме логина
+    get passwordField() {
+        return this.driver.$(
+            '//XCUIElementTypeSecureTextField[@value="Password"]'
+        );
+    }
 
-  // Поле Password в форме логина
-  get passwordField() {
-    return this.driver.$(
-      '//XCUIElementTypeSecureTextField[@placeholderValue="Password"]'
-    );
-  }
 
-  // Кнопка "Sign In" в форме логина
+    // Кнопка "Sign In" в форме логина
   get formSignInButton() {
     // В макете кнопка называется так же "Sign In", используем тот же локатор
     return this.driver.$('//XCUIElementTypeButton[@name="Sign In"]');
