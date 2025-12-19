@@ -8,8 +8,9 @@ export default class UserProfileScreen extends BaseScreen {
     }
 
     // --- Заголовок с именем пользователя ---
-    get userName() {
-        return this.driver.$('//XCUIElementTypeStaticText[@value="Vlad Koshman"]');
+    getUserNameElement(userName) {
+        // Ищем StaticText с точным именем пользователя
+        return this.driver.$(`//XCUIElementTypeStaticText[@name="${userName}"]`);
     }
 
     // --- Информация о последнем полёте ---
@@ -39,25 +40,22 @@ export default class UserProfileScreen extends BaseScreen {
         return this.driver.$('//XCUIElementTypeButton[@name="Maneuvers"]');
     }
 
-    // --- Прочие элементы полётов (первый блок) ---
-    get firstFlightLocation() {
-        return this.driver.$('//XCUIElementTypeStaticText[@value="Near Lehigh Acres"]');
+    // --- Первый полёт (динамически) ---
+    get firstFlightBlock() {
+        return this.driver.$('(//XCUIElementTypeOther[./XCUIElementTypeStaticText])[1]');
     }
 
-    get firstFlightAircraft() {
-        return this.driver.$('//XCUIElementTypeStaticText[contains(@value,"0FL0")]');
+    async openFirstFlight() {
+        const block = await this.firstFlightBlock;
+        await block.click();
     }
 
-    get firstFlightDuration() {
-        return this.driver.$('//XCUIElementTypeStaticText[contains(@value,"h")]');
-    }
-
-    // --- Кнопка вопросика (неактивная/дополнительно) ---
+    // --- Кнопка вопросика ---
     get questionIcon() {
         return this.driver.$('//XCUIElementTypeButton[@name="question-icon"]');
     }
 
-    // --- Кнопки для взаимодействия с клавиатурой (если нужно) ---
+    // --- Кнопки для клавиатуры ---
     get nextKeyboardButton() {
         return this.driver.$('//XCUIElementTypeButton[@name="Next keyboard"]');
     }
@@ -66,12 +64,11 @@ export default class UserProfileScreen extends BaseScreen {
         return this.driver.$('//XCUIElementTypeButton[@name="dictation"]');
     }
 
-    // --- Пример действия: открытие вкладки Flights ---
+    // --- Методы действий ---
     async openFlightsTab() {
         await (await this.flightsTab).click();
     }
 
-    // --- Пример действия: закрытие профиля через стрелку назад ---
     async goBack() {
         await (await this.leftArrowButton).click();
     }

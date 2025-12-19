@@ -12,8 +12,8 @@ afterAll(async () => {
 });
 
 test('dump current page source', async () => {
-  console.log('Жду 15 секунд. За это время открой экран редактирования самолёта в симуляторе.');
-  await driver.pause(15000); // можешь увеличить/уменьшить, если нужно
+  console.log('Жду 1 секунд. За это время открой экран редактирования самолёта в симуляторе.');
+  await driver.pause(1000); // можешь увеличить/уменьшить, если нужно
 
   const source = await driver.getPageSource();
 
